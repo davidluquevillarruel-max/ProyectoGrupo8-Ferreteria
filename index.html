@@ -41,6 +41,24 @@
             <input type="text" placeholder="Buscar productos...">
         </div>
 
+        <!-- ══════════════════════════════════════════════════════
+             BOTONES DE SESIÓN (solo se ven en móvil por CSS).
+             En escritorio los mismos botones viven en el header.
+             ══════════════════════════════════════════════════════ -->
+        <div class="sidebar-auth" id="sidebarAuthBox">
+            <!-- Sin sesión -->
+            <a href="#" class="sidebar-auth-btn sidebar-auth-login" id="sidebarBtnLogin">
+                <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
+            </a>
+            <a href="#" class="sidebar-auth-btn sidebar-auth-register" id="sidebarBtnRegister">
+                <i class="fa-solid fa-user-plus"></i> Registrarse
+            </a>
+            <!-- Con sesión -->
+            <a href="#" class="sidebar-auth-btn sidebar-auth-logout" id="sidebarBtnLogout" style="display:none;">
+                <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+            </a>
+        </div>
+
         <div class="sidebar-section-label">ACCESO RÁPIDO</div>
         <div class="sidebar-menu">
             <a href="#" class="sidebar-menu-item" id="btnOfertasDia">

@@ -5068,9 +5068,10 @@ textarea:focus,
 
 /* ─── TABLET (< 900px) ─────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-    /* La nav horizontal (Inicio, Sobre Nosotros, Productos, Contacto) se oculta:
-       queda todo dentro de la hamburguesa del sidebar. */
-    .nav-bar-main { display: none !important; }
+    /* Los LINKS horizontales del nav (Inicio, Sobre Nosotros, Productos,
+       Contacto) se ocultan, pero la BARRA naranja queda visible porque
+       ahí vive el botón hamburguesa. */
+    .nav-menu { display: none !important; }
 
     /* Header más compacto */
     .header { padding: 10px 0; }
@@ -5254,4 +5255,70 @@ textarea:focus,
     .top-bar { font-size: 0.72rem; }
     .cat-filtro-btn { flex: 1 1 100%; }
     .admin-stat-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   AJUSTES v7 — BOTONES DE SESIÓN EN EL SIDEBAR (móvil)
+   Estos botones solo se ven en el sidebar dentro de móvil.
+   En escritorio se ocultan porque ya están en el header.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.sidebar-auth {
+    display: none;                     /* oculto en escritorio */
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 18px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 8px;
+}
+
+.sidebar-auth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+}
+
+.sidebar-auth-login {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+.sidebar-auth-login:hover {
+    background: #fff;
+    color: var(--color4);
+}
+
+.sidebar-auth-register {
+    background: var(--color3);
+    color: #fff;
+    border: 2px solid var(--color3);
+}
+.sidebar-auth-register:hover {
+    background: #d66a00;
+    border-color: #d66a00;
+}
+
+.sidebar-auth-logout {
+    background: #d9534f;
+    color: #fff;
+    border: 2px solid #d9534f;
+}
+.sidebar-auth-logout:hover {
+    background: #c9302c;
+    border-color: #c9302c;
+    color: #fff;
+}
+
+/* Mostrar los botones del sidebar SOLO en móvil */
+@media (max-width: 900px) {
+    .sidebar-auth { display: flex; }
 }

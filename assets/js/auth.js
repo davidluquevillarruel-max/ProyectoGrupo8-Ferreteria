@@ -114,8 +114,24 @@ function actualizarUI() {
     const userGreeting      = document.getElementById("userGreeting");
     const userGreetingName  = document.getElementById("userGreetingName");
 
+    // Referencias a los botones del sidebar (visibles solo en móvil)
+    const sidebarBtnLogin    = document.getElementById("sidebarBtnLogin");
+    const sidebarBtnRegister = document.getElementById("sidebarBtnRegister");
+    const sidebarBtnLogout   = document.getElementById("sidebarBtnLogout");
+
+    // Función auxiliar para cerrar el sidebar antes de abrir el modal
+    function cerrarSidebarYAbrir(panel) {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebarOverlay");
+        if (sidebar) sidebar.classList.remove("sidebar-open");
+        if (overlay) overlay.classList.remove("overlay-visible");
+        document.body.style.overflow = "";
+        setTimeout(() => abrirModal(panel), 200);
+    }
+
     if (sesion) {
-        // ── LOGUEADO: ocultar Iniciar/Registrarse, mostrar saludo + Cerrar sesión ──
+        // ── LOGUEADO ─────────────────────────────────────────
+        // Header: ocultar Iniciar/Registrarse, mostrar saludo + Cerrar sesión
         if (btnIniciarSesion) btnIniciarSesion.style.display = "none";
         if (btnRegistrarse)   btnRegistrarse.style.display   = "none";
         if (btnCerrarSesion)  btnCerrarSesion.style.display  = "";
@@ -128,8 +144,20 @@ function actualizarUI() {
                 if (confirm("¿Deseas cerrar sesión?")) cerrarSesion();
             };
         }
+
+        // Sidebar (móvil): ocultar Iniciar/Registrarse, mostrar Cerrar sesión
+        if (sidebarBtnLogin)    sidebarBtnLogin.style.display    = "none";
+        if (sidebarBtnRegister) sidebarBtnRegister.style.display = "none";
+        if (sidebarBtnLogout) {
+            sidebarBtnLogout.style.display = "";
+            sidebarBtnLogout.onclick = function(e) {
+                e.preventDefault();
+                if (confirm("¿Deseas cerrar sesión?")) cerrarSesion();
+            };
+        }
     } else {
-        // ── INVITADO: mostrar Iniciar sesión + Registrarse ──
+        // ── INVITADO ─────────────────────────────────────────
+        // Header
         if (btnIniciarSesion) btnIniciarSesion.style.display = "";
         if (btnRegistrarse)   btnRegistrarse.style.display   = "";
         if (btnCerrarSesion)  btnCerrarSesion.style.display  = "none";
@@ -145,6 +173,23 @@ function actualizarUI() {
             btnRegistrarse.onclick = function(e) {
                 e.preventDefault();
                 abrirModal(panelRegister);
+            };
+        }
+
+        // Sidebar (móvil): mostrar Iniciar/Registrarse, ocultar Cerrar sesión
+        if (sidebarBtnLogout) sidebarBtnLogout.style.display = "none";
+        if (sidebarBtnLogin) {
+            sidebarBtnLogin.style.display = "";
+            sidebarBtnLogin.onclick = function(e) {
+                e.preventDefault();
+                cerrarSidebarYAbrir(panelLogin);
+            };
+        }
+        if (sidebarBtnRegister) {
+            sidebarBtnRegister.style.display = "";
+            sidebarBtnRegister.onclick = function(e) {
+                e.preventDefault();
+                cerrarSidebarYAbrir(panelRegister);
             };
         }
     }
@@ -173,13 +218,7 @@ function actualizarUI() {
                     cerrarSesion();
                 }
             } else {
-                // Cerrar el sidebar y abrir el modal
-                const sidebar = document.getElementById("sidebar");
-                const overlay = document.getElementById("sidebarOverlay");
-                if (sidebar) sidebar.classList.remove("sidebar-open");
-                if (overlay) overlay.classList.remove("overlay-visible");
-                document.body.style.overflow = "";
-                setTimeout(() => abrirModal(panelLogin), 200);
+                cerrarSidebarYAbrir(panelLogin);
             }
         };
     }
