@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos — Estructuras & Diseños Group</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <section class="top-bar">
+        <div class="container">
+            <div class="top-bar-main">
+                <div class="top-bar-contact">
+                    <a href="tel:+51952361384"><i class="fa-solid fa-phone-flip"></i> 952-361-384</a>
+                    <a href=""><i class="fa-solid fa-location-dot"></i> Cesar Vallejo 20 - Chorrillos</a>
+                </div>
+                <div class="top-bar-social">
+                    <span>Síguenos:</span>
+                    <a target="_blank" href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/dcbarron.arch/"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header padding-sm">
+        <div class="container">
+            <div class="nav-bar">
+                <div class="nav-logo">
+                    <a href="../../index.html"><img class="img-fluid logo-header" src="../img/LOGO 1.png" alt="E&D Group"></a>
+                    <a href="../../index.html"><img class="img-fluid logo-header" src="../img/LOGO 2.png" alt="Estructuras & Diseños Group"></a>
+                </div>
+                <div class="header-actions">
+                    <a class="service-button btn-registrarse" href="#">Registrarse</a>
+                    <a class="cart-button" href="#">
+                        <span class="cart-badge">0</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAV BAR ===== -->
+    <nav class="nav-bar-main">
+        <div class="container">
+            <div class="nav-bar-inner">
+                <div class="nav-menu">
+                    <a class="nav-menu-link" href="../../index.html">Inicio</a>
+                    <a class="nav-menu-link" href="nosotros.html">Sobre Nosotros</a>
+                    <a class="nav-menu-link nav-link-active" href="productos.html">Productos</a>
+                    <a class="nav-menu-link" href="contacto.html">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===== BANNER ===== -->
+        <section class="page-title title-productos">
+            <div class="container">
+                <div class="page-title-main">Productos</div>
+                <div class="page-title-path">
+                    <a href="../../index.html">Estructuras & Diseños GROUP</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="productos.html" data-cat="todas">Productos</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span id="breadcrumbCat">Todos los productos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BENEFICIOS ===== -->
+        <section class="benefits" style="padding:24px 0;">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="benefit-text"><h3>Asesoramiento técnico</h3><p>Te ayudamos a seleccionar las mejores herramientas para tus proyectos</p></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div class="benefit-text"><h3>Envío gratis</h3><p>Por órdenes mayores a S/ 99</p></div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="benefit-text"><h3>Pago seguro</h3><p>Pago seguro al 100%</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CATÁLOGO ===== -->
+        <section class="catalogo padding-xl">
+            <div class="container">
+
+                <!-- Filtros de categoría -->
+                <div class="cat-filtros">
+                    <a href="#" class="cat-filtro-btn cat-activa" data-cat="todas">
+                        <i class="fa-solid fa-border-all"></i> Todos
+                    </a>
+                    <a href="#" class="cat-filtro-btn" data-cat="manuales">
+                        <i class="fa-solid fa-hammer"></i> Herramientas Manuales
+                    </a>
+                    <a href="#" class="cat-filtro-btn" data-cat="electricas">
+                        <i class="fa-solid fa-bolt"></i> Herramientas Eléctricas
+                    </a>
+                    <a href="#" class="cat-filtro-btn" data-cat="inalambricas">
+                        <i class="fa-solid fa-wifi"></i> Herramientas Inalámbricas
+                    </a>
+                </div>
+
+                <!-- Barra superior: Ordenar + Paginación -->
+                <div class="catalogo-topbar">
+                    <div class="catalogo-orden">
+                        <span class="catalogo-orden-label">Ordenar por <i class="fa-solid fa-chevron-down"></i></span>
+                        <select id="selectOrden" class="catalogo-select">
+                            <option value="default">Por defecto</option>
+                            <option value="precio-asc">Precio: menor a mayor</option>
+                            <option value="precio-desc">Precio: mayor a menor</option>
+                            <option value="nombre-az">Nombre: A → Z</option>
+                            <option value="nombre-za">Nombre: Z → A</option>
+                        </select>
+                    </div>
+                    <div class="catalogo-paginacion">
+                        <button class="pag-btn" id="btnPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span id="paginaInfo" class="pag-info">Página 1 de 1</span>
+                        <button class="pag-btn" id="btnNext"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Grid llenado por productos-lista.js -->
+                <div class="prod-grid" id="productosGrid"></div>
+
+                <!-- Paginación inferior -->
+                <div class="catalogo-paginacion catalogo-paginacion-bottom">
+                    <button class="pag-btn" id="btnPrev2"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span id="paginaInfo2" class="pag-info">Página 1 de 1</span>
+                    <button class="pag-btn" id="btnNext2"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== MARCAS ===== -->
+        <section class="marcas padding-xl">
+            <div class="container">
+                <h2 class="marcas-title">TRABAJAMOS CON GRANDES MARCAS</h2>
+                <div class="marcas-grid">
+                    <div class="marca-item"><img src="../sgv/bosch-logo-simple.svg" alt="Bosch" class="marca-svg"></div>
+                    <div class="marca-item"><img src="../sgv/philips.svg" alt="Philips" class="marca-svg"></div>
+                    <div class="marca-item"><span class="marca-nombre marca-stanley">STANLEY<br><small>BUILT FOR LIFE</small></span></div>
+                    <div class="marca-item"><img src="../sgv/cat-1.svg" alt="CAT" class="marca-svg"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Compañía</h4>
+                    <ul class="footer-list">
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="#">Iniciar sesión</a></li>
+                        <li><a href="mailto:estructurasydiseniosgroup@ferreteria.com">estructurasydiseniosgroup@ferreteria.com</a></li>
+                        <li><a href="tel:+51969518850">969518850</a></li>
+                        <li><span>Av. César Vallejo 20, Chorrillos</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Cuenta</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Crear cuenta</a></li>
+                        <li><a href="#">Acceso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Apoyo</h4>
+                    <ul class="footer-list">
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="productos.html">Solicitar productos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-desc">
+                    <p>Estructuras & Diseños Group es una ferretería con años de experiencia brindándote los mejores productos de las mejores marcas.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logos">
+                    <img src="../img/LOGO 1.png" alt="Logo E&D" class="footer-logo-img">
+                    <img src="../img/LOGO 2.png" alt="Estructuras & Diseños" class="footer-logo-img">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Términos y condiciones</a>
+                    <span>&copy; 2026 Estructuras & Diseños Group - Todos los derechos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ===== PANEL CARRITO ===== -->
+    <div class="carrito-overlay" id="carritoOverlay"></div>
+    <aside class="carrito-panel" id="carritoPanel">
+        <div class="carrito-header">
+            <h3 class="carrito-title"><i class="fa-solid fa-cart-shopping"></i> Tu carrito</h3>
+            <button class="carrito-close" id="carritoClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="carrito-lista" id="carritoLista"></div>
+        <div class="carrito-footer">
+            <div class="carrito-subtotal">
+                <span>Subtotal</span>
+                <span id="carritoSubtotal">S/ 0.00</span>
+            </div>
+            <div class="carrito-total">
+                <span>Total</span>
+                <span id="carritoTotal">S/ 0.00</span>
+            </div>
+            <a href="pago.html" class="carrito-btn-pagar">Ir a pagar</a>
+        </div>
+    </aside>
+
+        <a class="scroll-up" href="#"><i class="fa-solid fa-angle-up"></i></a>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/productos-lista.js"></script>
+
+    <script src="../js/ui-enhancements.js"></script>
+    <script src="../js/store-data.js"></script>
+    <script src="../js/virtual-assistant.js"></script>
+</body>
+</html>
+

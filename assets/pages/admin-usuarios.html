@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de usuarios - Panel de gestión</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <a class="admin-brand" href="../../index.html"><img src="../img/LOGO 1.png" alt="E&D"><span>Panel de gestión</span></a>
+        <nav class="admin-nav">
+            <a class="admin-nav-link" href="admin-inventario.html"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a>
+            <a class="admin-nav-link" href="admin-ventas.html"><i class="fa-solid fa-chart-line"></i> Analizar venta</a>
+            <a class="admin-nav-link admin-active" href="admin-usuarios.html"><i class="fa-solid fa-users-gear"></i> Control de usuarios</a>
+            <a class="admin-nav-link" href="admin-productos.html"><i class="fa-solid fa-plus"></i> Agregar o quitar productos</a>
+        </nav>
+        <a class="admin-back" href="../../index.html"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-top">
+            <div>
+                <span class="section-kicker">Administración</span>
+                <h1>Control de usuarios</h1>
+                <p>Vista para gestionar clientes, roles y actividad registrada en la tienda.</p>
+            </div>
+            <button class="admin-primary-btn" type="button"><i class="fa-solid fa-user-plus"></i> Nuevo usuario</button>
+        </header>
+
+        <section class="admin-stat-grid">
+            <article class="admin-stat-card"><span>Usuarios</span><strong data-stat="users">0</strong><small>Registrados</small></article>
+            <article class="admin-stat-card"><span>Clientes activos</span><strong data-stat="active-users">0</strong><small>Últimos 30 días</small></article>
+            <article class="admin-stat-card"><span>Administradores</span><strong data-stat="admins">0</strong><small>Acceso interno</small></article>
+            <article class="admin-stat-card"><span>Mensajes</span><strong data-stat="messages">0</strong><small>Desde contacto</small></article>
+        </section>
+
+        <section class="admin-panel">
+            <div class="admin-panel-head">
+                <h2>Usuarios recientes</h2>
+                <div class="admin-filter"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar usuario"></div>
+            </div>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr><th>Nombre</th><th>Correo</th><th>Rol</th><th>Última actividad</th><th>Estado</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>James Correa</td><td>james.correa@gmail.com</td><td>Cliente</td><td>Hoy</td><td><span class="status status-ok">Activo</span></td></tr>
+                        <tr><td>Admin General</td><td>admin@edg.com</td><td>Administrador</td><td>Ayer</td><td><span class="status status-ok">Activo</span></td></tr>
+                        <tr><td>María Torres</td><td>maria@email.com</td><td>Cliente</td><td>Hace 5 días</td><td><span class="status status-warn">Pendiente</span></td></tr>
+                        <tr><td>Luis Pérez</td><td>luis@email.com</td><td>Cliente</td><td>Hace 12 días</td><td><span class="status status-muted">Inactivo</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="../js/ui-enhancements.js"></script>
+    <script src="../js/store-data.js"></script>
+    <script src="../js/virtual-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar o quitar productos - Panel de gestión</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <a class="admin-brand" href="../../index.html"><img src="../img/LOGO 1.png" alt="E&D"><span>Panel de gestión</span></a>
+        <nav class="admin-nav">
+            <a class="admin-nav-link" href="admin-inventario.html"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a>
+            <a class="admin-nav-link" href="admin-ventas.html"><i class="fa-solid fa-chart-line"></i> Analizar venta</a>
+            <a class="admin-nav-link" href="admin-usuarios.html"><i class="fa-solid fa-users-gear"></i> Control de usuarios</a>
+            <a class="admin-nav-link admin-active" href="admin-productos.html"><i class="fa-solid fa-plus"></i> Agregar o quitar productos</a>
+        </nav>
+        <a class="admin-back" href="../../index.html"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-top">
+            <div>
+                <span class="section-kicker">Administración</span>
+                <h1>Agregar o quitar productos</h1>
+                <p>Formulario visual para preparar altas, bajas y cambios antes de conectarlo a una base de datos.</p>
+            </div>
+            <button class="admin-primary-btn" type="button"><i class="fa-solid fa-floppy-disk"></i> Guardar cambios</button>
+        </header>
+
+        <section class="admin-grid-two admin-product-layout">
+            <article class="admin-panel">
+                <div class="admin-panel-head"><h2>Nuevo producto</h2></div>
+                <form class="admin-form">
+                    <label>Nombre del producto<input id="adminProductName" type="text" placeholder="Ej: Taladro percutor 850W"></label>
+                    <label>Categoría
+                        <select id="adminProductCategory">
+                            <option>Herramientas manuales</option>
+                            <option>Herramientas eléctricas</option>
+                            <option>Herramientas inalámbricas</option>
+                        </select>
+                    </label>
+                    <div class="admin-form-row">
+                        <label>Precio<input id="adminProductPrice" type="number" placeholder="0.00"></label>
+                        <label>Stock<input id="adminProductStock" type="number" placeholder="0"></label>
+                    </div>
+                    <label>Imagen<input id="adminProductImage" type="text" placeholder="../img herramientas/archivo.png"></label>
+                    <button type="button" class="admin-primary-btn admin-full-btn" data-action="add-product"><i class="fa-solid fa-plus"></i> Agregar producto</button>
+                </form>
+            </article>
+            <article class="admin-panel">
+                <div class="admin-panel-head"><h2>Acciones rápidas</h2></div>
+                <div class="admin-product-preview-grid">
+                    <article>
+                        <img src="../img herramientas/Rectangle 32.png" alt="Extensión flexible para destornillador">
+                        <span>Manual</span>
+                    </article>
+                    <article>
+                        <img src="../img herramientas/Rectangle 17 (1).png" alt="Lijadora orbital">
+                        <span>Eléctrica</span>
+                    </article>
+                    <article>
+                        <img src="../img herramientas/Rectangle 18.png" alt="Rotomartillo inalámbrico">
+                        <span>Inalámbrica</span>
+                    </article>
+                </div>
+                <div class="admin-actions-list">
+                    <button><i class="fa-solid fa-pen-to-square"></i><span>Editar precio o stock</span></button>
+                    <button><i class="fa-solid fa-eye-slash"></i><span>Ocultar del catálogo</span></button>
+                    <button class="danger-action"><i class="fa-solid fa-trash-can"></i><span>Quitar producto</span></button>
+                </div>
+                <div class="admin-note">
+                    <i class="fa-solid fa-database"></i>
+                    <p>Cuando se conecte SQL, este panel puede enviar los cambios mediante una API y reemplazar los arrays actuales de JavaScript.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="../js/ui-enhancements.js"></script>
+    <script src="../js/store-data.js"></script>
+    <script src="../js/virtual-assistant.js"></script>
+</body>
+</html>

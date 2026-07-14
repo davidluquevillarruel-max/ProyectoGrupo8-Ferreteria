@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — Estructuras & Diseños Group</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <section class="top-bar">
+        <div class="container">
+            <div class="top-bar-main">
+                <div class="top-bar-contact">
+                    <a href="tel:+51952361384">
+                        <i class="fa-solid fa-phone-flip"></i> 952-361-384
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-location-dot"></i> Cesar Vallejo 20 - Chorrillos
+                    </a>
+                </div>
+                <div class="top-bar-social">
+                    <span>Síguenos:</span>
+                    <a target="_blank" href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/dcbarron.arch/"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header padding-sm">
+        <div class="container">
+            <div class="nav-bar">
+                <div class="nav-logo">
+                    <a href="../../index.html">
+                        <img class="img-fluid logo-header" src="../img/LOGO 1.png" alt="Estructuras & Diseños Group">
+                    </a>
+                    <a href="../../index.html">
+                        <img class="img-fluid logo-header" src="../img/LOGO 2.png" alt="Estructuras & Diseños Group">
+                    </a>
+                </div>
+                <div class="header-actions">
+                    <a class="service-button btn-registrarse" href="#">Registrarse</a>
+                    <a class="cart-button" href="#">
+                        <span class="cart-badge">0</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAV BAR (franja naranja) ===== -->
+    <nav class="nav-bar-main">
+        <div class="container">
+            <div class="nav-bar-inner">
+                <div class="nav-menu">
+                    <a class="nav-menu-link" href="../../index.html">Inicio</a>
+                    <a class="nav-menu-link" href="nosotros.html">Sobre Nosotros</a>
+                    <a class="nav-menu-link" href="productos.html">Productos</a>
+                    <a class="nav-menu-link nav-link-active" href="contacto.html">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===== BANNER TÍTULO ===== -->
+        <section class="page-title title-contacto">
+            <div class="container">
+                <div class="page-title-main">Contacto</div>
+                <div class="page-title-path">
+                    <a href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a> / Contacto
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FORMULARIO DE CONTACTO ===== -->
+        <section class="form-contact padding-xl">
+            <div class="container">
+                <h2>FORMULARIO DE CONTACTO</h2>
+                <div class="row">
+
+                    <!-- Formulario -->
+                    <div class="col col-60">
+                        <form id="formContacto" novalidate>
+                            <div class="row">
+                                <div class="col col-50">
+                                    <label class="form-label">Nombre</label>
+                                    <input class="form-control" type="text" id="cNombre" placeholder="Tu nombre completo" required>
+                                </div>
+                                <div class="col col-50">
+                                    <label class="form-label">Correo electrónico</label>
+                                    <input class="form-control" type="email" id="cCorreo" placeholder="tucorreo@gmail.com o @hotmail.com" required>
+                                </div>
+                                <div class="col col-50">
+                                    <label class="form-label">Teléfono</label>
+                                    <input class="form-control" type="tel" id="cTelefono" placeholder="9 dígitos, ej: 987654321" required maxlength="9" inputmode="numeric" pattern="[0-9]{9}">
+                                </div>
+                                <div class="col col-50">
+                                    <label class="form-label">Asunto</label>
+                                    <input class="form-control" type="text" id="cAsunto" placeholder="¿En qué te podemos ayudar?" required>
+                                </div>
+                                <div class="col col-100">
+                                    <label class="form-label">Mensaje</label>
+                                    <textarea class="form-control form-noresize" id="cMensaje" placeholder="Déjanos tu mensaje..." required rows="5"></textarea>
+                                </div>
+                                <div class="col col-100">
+                                    <input type="checkbox" id="cPolitica" required>
+                                    <label for="cPolitica" class="form-label" style="display:inline; margin-left:8px;">
+                                        He leído y acepto los
+                                        <a class="form-link" target="_blank" href="#">términos y condiciones</a>
+                                        sobre el tratamiento de mis datos personales.
+                                    </label>
+                                </div>
+                                <div class="col col-100">
+                                    <p id="contactoError" style="color:#ff4444; font-size:0.88rem; margin-bottom:8px; min-height:18px;"></p>
+                                    <button class="form-submit" type="button" id="btnEnviarContacto" onclick="enviarContacto()" disabled>
+                                        Enviar mensaje <i class="fa-regular fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                                <div class="col col-100">
+                                    <p id="contactoOk" style="color:#43a047; font-weight:bold; margin-top:12px; min-height:18px;"></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Info lateral -->
+                    <div class="col col-40">
+                        <div class="contacto-info-box">
+                            <h3 class="contacto-info-title">¿Cómo llegar?</h3>
+                            <ul class="contacto-info-list">
+                                <li><i class="fa-solid fa-location-dot"></i> Av. César Vallejo 20, Chorrillos</li>
+                                <li><i class="fa-solid fa-phone"></i> <a href="tel:+51952361384">952-361-384</a></li>
+                                <li><i class="fa-solid fa-phone"></i> <a href="tel:+51969518850">969-518-850</a></li>
+                                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:estructurasydiseniosgroup@ferreteria.com">estructurasydiseniosgroup@ferreteria.com</a></li>
+                                <li><i class="fa-solid fa-clock"></i> Lun – Sáb: 8:00 am – 7:00 pm</li>
+                            </ul>
+                            <div class="contacto-mapa">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7!2d-77.02!3d-12.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDEwJzEyLjAiUyA3N8KwMDEnMTIuMCJX!5e0!3m2!1ses!2spe!4v1"
+                                    width="100%" height="220" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Compañía</h4>
+                    <ul class="footer-list">
+                        <li><a href="nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="#">Iniciar sesión</a></li>
+                        <li><a href="mailto:estructurasydiseniosgroup@ferreteria.com">estructurasydiseniosgroup@ferreteria.com</a></li>
+                        <li><a href="tel:+51969518850">969518850</a></li>
+                        <li><span>Av. César Vallejo 20, Chorrillos</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Cuenta</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Crear cuenta</a></li>
+                        <li><a href="#">Acceso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Apoyo</h4>
+                    <ul class="footer-list">
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="productos.html">Solicitar productos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-desc">
+                    <p>Estructuras & Diseños Group es una ferretería con años de experiencia brindándote los mejores productos de las mejores marcas.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logos">
+                    <img src="../img/LOGO 1.png" alt="Logo E&D" class="footer-logo-img">
+                    <img src="../img/LOGO 2.png" alt="Estructuras & Diseños" class="footer-logo-img">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Términos y condiciones</a>
+                    <span>&copy; 2026 Estructuras & Diseños Group - Todos los derechos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="scroll-up" href="#"><i class="fa-solid fa-angle-up"></i></a>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════
+        //  FORMULARIO DE CONTACTO
+        //  - Valida email @gmail.com / @hotmail.com obligatorio
+        //  - Teléfono solo dígitos, exactamente 9
+        //  - Botón desactivado hasta que TODO esté completo + check
+        //  - Al enviar: guarda en BD (o respaldo local) + abre WhatsApp
+        //    con un resumen del mensaje al asesor
+        // ═══════════════════════════════════════════════════════════
+
+        const WS_ASESOR_CONTACTO = "51910194188"; // número con código de país (Perú)
+
+        // Referencias
+        const cNombre   = document.getElementById("cNombre");
+        const cCorreo   = document.getElementById("cCorreo");
+        const cTelefono = document.getElementById("cTelefono");
+        const cAsunto   = document.getElementById("cAsunto");
+        const cMensaje  = document.getElementById("cMensaje");
+        const cPolitica = document.getElementById("cPolitica");
+        const btnEnviar = document.getElementById("btnEnviarContacto");
+
+        // Filtro en tiempo real: teléfono solo acepta números
+        cTelefono.addEventListener("input", function () {
+            this.value = this.value.replace(/\D/g, "").slice(0, 9);
+            actualizarEstadoBoton();
+        });
+
+        // Validador de email: solo @gmail.com o @hotmail.com
+        function emailValido(correo) {
+            const patron = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$/i;
+            return patron.test(correo);
+        }
+
+        // Habilita/deshabilita el botón según el estado del formulario
+        function actualizarEstadoBoton() {
+            const completo =
+                cNombre.value.trim().length > 0 &&
+                emailValido(cCorreo.value.trim()) &&
+                /^\d{9}$/.test(cTelefono.value.trim()) &&
+                cAsunto.value.trim().length > 0 &&
+                cMensaje.value.trim().length > 0 &&
+                cPolitica.checked;
+            btnEnviar.disabled = !completo;
+        }
+
+        // Escucha cambios en todos los campos
+        [cNombre, cCorreo, cTelefono, cAsunto, cMensaje].forEach(el =>
+            el.addEventListener("input", actualizarEstadoBoton)
+        );
+        cPolitica.addEventListener("change", actualizarEstadoBoton);
+
+        // Guardado local de respaldo (por si la BD no responde)
+        function guardarMensajeLocal(datos) {
+            const mensajes = JSON.parse(localStorage.getItem("contactos_edg") || "[]");
+            mensajes.push(datos);
+            localStorage.setItem("contactos_edg", JSON.stringify(mensajes));
+        }
+
+        // Construye el resumen que se manda al WhatsApp del asesor
+        function construirResumenWS(datos) {
+            const fecha = new Date().toLocaleString("es-PE", {
+                day: "2-digit", month: "long", year: "numeric",
+                hour: "2-digit", minute: "2-digit"
+            });
+            let msg  = `📩 *Nuevo mensaje de contacto — Estructuras & Diseños Group*\n`;
+            msg     += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg     += `👤 *Nombre:* ${datos.nombre}\n`;
+            msg     += `📧 *Correo:* ${datos.correo}\n`;
+            msg     += `📱 *Teléfono:* ${datos.telefono}\n`;
+            msg     += `📝 *Asunto:* ${datos.asunto}\n`;
+            msg     += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg     += `💬 *Mensaje:*\n${datos.mensaje}\n`;
+            msg     += `━━━━━━━━━━━━━━━━━━━━\n`;
+            msg     += `🕒 ${fecha}`;
+            return encodeURIComponent(msg);
+        }
+
+        async function enviarContacto() {
+            const errorEl = document.getElementById("contactoError");
+            const okEl    = document.getElementById("contactoOk");
+            errorEl.textContent = "";
+            okEl.textContent    = "";
+
+            const nombre   = cNombre.value.trim();
+            const correo   = cCorreo.value.trim();
+            const telefono = cTelefono.value.trim();
+            const asunto   = cAsunto.value.trim();
+            const mensaje  = cMensaje.value.trim();
+
+            // Validaciones (redundantes pero por seguridad)
+            if (!nombre || !correo || !telefono || !asunto || !mensaje) {
+                errorEl.textContent = "Por favor completa todos los campos."; return;
+            }
+            if (!emailValido(correo)) {
+                errorEl.textContent = "El correo debe ser @gmail.com o @hotmail.com."; return;
+            }
+            if (!/^\d{9}$/.test(telefono)) {
+                errorEl.textContent = "El teléfono debe tener exactamente 9 dígitos."; return;
+            }
+            if (!cPolitica.checked) {
+                errorEl.textContent = "Debes aceptar los términos y condiciones."; return;
+            }
+
+            const datos = { nombre, correo, telefono, asunto, mensaje, fecha: new Date().toISOString() };
+
+            // 1) Guardar en la BD (con respaldo local si falla)
+            try {
+                const resp = await fetch("/api/contacto", {
+                    method:  "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ nombre, email: correo, telefono, asunto, mensaje })
+                });
+                const data = await resp.json();
+                if (!resp.ok) throw new Error(data.error || "HTTP " + resp.status);
+                console.log("✅ Mensaje guardado en la BD, id:", data.id);
+            } catch (err) {
+                console.warn("⚠️ Guardando respaldo local:", err.message);
+                guardarMensajeLocal(datos);
+            }
+
+            // 2) Abrir WhatsApp con el resumen para el asesor
+            const resumen = construirResumenWS(datos);
+            const urlWS = `https://wa.me/${WS_ASESOR_CONTACTO}?text=${resumen}`;
+            window.open(urlWS, "_blank");
+
+            // 3) Limpiar formulario y mostrar confirmación
+            [cNombre, cCorreo, cTelefono, cAsunto, cMensaje].forEach(el => el.value = "");
+            cPolitica.checked = false;
+            actualizarEstadoBoton();
+
+            okEl.textContent = "✓ ¡Mensaje enviado! Se abrió WhatsApp para que confirmes con nuestro asesor.";
+        }
+    </script>
+
+    <script src="../js/ui-enhancements.js"></script>
+    <script src="../js/store-data.js"></script>
+    <script src="../js/virtual-assistant.js"></script>
+</body>
+</html>
+

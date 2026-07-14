@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago — Estructuras & Diseños Group</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <section class="top-bar">
+        <div class="container">
+            <div class="top-bar-main">
+                <div class="top-bar-contact">
+                    <a href="tel:+51969518850"><i class="fa-solid fa-phone-flip"></i> 969-518-850</a>
+                    <a href=""><i class="fa-solid fa-location-dot"></i> Cesar Vallejo 20 - Chorrillos</a>
+                </div>
+                <div class="top-bar-social">
+                    <span>Síguenos:</span>
+                    <a target="_blank" href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/dcbarron.arch/"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header padding-sm">
+        <div class="container">
+            <div class="nav-bar">
+                <div class="nav-logo">
+                    <a href="../../index.html"><img class="img-fluid logo-header" src="../img/LOGO 1.png" alt="E&D Group"></a>
+                    <a href="../../index.html"><img class="img-fluid logo-header" src="../img/LOGO 2.png" alt="Estructuras & Diseños Group"></a>
+                </div>
+                <div class="header-actions">
+                    <a class="service-button btn-registrarse" href="#">Registrarse</a>
+                    <a class="cart-button" href="javascript:history.back()">
+                        <span class="cart-badge" style="display:none;">0</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav-bar-main">
+        <div class="container">
+            <div class="nav-bar-inner">
+                <div class="nav-menu">
+                    <a class="nav-menu-link" href="../../index.html">Inicio</a>
+                    <a class="nav-menu-link" href="nosotros.html">Sobre Nosotros</a>
+                    <a class="nav-menu-link" href="productos.html">Productos</a>
+                    <a class="nav-menu-link" href="contacto.html">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="mainPago">
+
+        <!-- ===== PASO 1: ELEGIR MÉTODO ===== -->
+        <section class="pago-section" id="pasoMetodo">
+            <div class="container">
+
+                <div class="pago-breadcrumb">
+                    <a href="../../index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="productos.html">Productos</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Finalizar compra</span>
+                </div>
+
+                <div class="pago-layout">
+
+                    <!-- Columna izquierda: método + formulario -->
+                    <div class="pago-col-left">
+                        <h2 class="pago-titulo">Finalizar compra</h2>
+
+                        <!-- Selector de método -->
+                        <div class="metodo-tabs">
+                            <button class="metodo-tab metodo-tab-active" id="tabTarjeta" onclick="cambiarMetodo('tarjeta')">
+                                <i class="fa-solid fa-credit-card"></i> Tarjeta
+                            </button>
+                            <button class="metodo-tab" id="tabYape" onclick="cambiarMetodo('yape')">
+                                <i class="fa-solid fa-mobile-screen"></i> Yape / Plin
+                            </button>
+                            <button class="metodo-tab" id="tabWhatsapp" onclick="cambiarMetodo('whatsapp')">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </button>
+                        </div>
+
+                        <!-- FORMULARIO TARJETA -->
+                        <div class="metodo-panel" id="panelTarjeta">
+                            <div class="pago-form">
+                                <div class="pago-field-group">
+                                    <label class="pago-label">Nombre completo</label>
+                                    <input class="pago-input" id="cardNombre" type="text" placeholder="Como aparece en la tarjeta">
+                                </div>
+                                <div class="pago-field-group">
+                                    <label class="pago-label">Número de tarjeta</label>
+                                    <div class="pago-input-icon">
+                                        <input class="pago-input" id="cardNumero" type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                                        <i class="fa-regular fa-credit-card pago-input-ico"></i>
+                                    </div>
+                                </div>
+                                <div class="pago-row2">
+                                    <div class="pago-field-group">
+                                        <label class="pago-label">Vencimiento</label>
+                                        <input class="pago-input" id="cardVenc" type="text" placeholder="MM/AA" maxlength="5">
+                                    </div>
+                                    <div class="pago-field-group">
+                                        <label class="pago-label">CVV</label>
+                                        <input class="pago-input" id="cardCvv" type="text" placeholder="•••" maxlength="4">
+                                    </div>
+                                </div>
+                                <div class="pago-field-group">
+                                    <label class="pago-label">Email de confirmación</label>
+                                    <input class="pago-input" id="cardEmail" type="email" placeholder="tucorreo@email.com">
+                                </div>
+                                <p id="tarjetaError" class="pago-error"></p>
+                                <button class="pago-btn-principal" onclick="procesarTarjeta()">
+                                    <i class="fa-solid fa-lock"></i> Pagar ahora
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANEL YAPE / PLIN -->
+                        <div class="metodo-panel metodo-panel-hidden" id="panelYape">
+                            <div class="yape-panel">
+                                <div class="yape-opciones">
+                                    <button class="yape-tab yape-tab-active" id="btnYape" onclick="cambiarYape('yape')">
+                                        <img src="../img/yape-logo.png" alt="Yape" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                                        <span style="display:none;font-weight:800;color:#6b21a8;">YAPE</span>
+                                    </button>
+                                    <button class="yape-tab" id="btnPlin" onclick="cambiarYape('plin')">
+                                        <img src="../img/plin-logo.png" alt="Plin" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+                                        <span style="display:none;font-weight:800;color:#00b4d8;">PLIN</span>
+                                    </button>
+                                </div>
+                                <div class="yape-instrucciones">
+                                    <div class="yape-qr-box">
+                                        <div class="yape-qr-placeholder">
+                                            <i class="fa-solid fa-qrcode"></i>
+                                            <p id="yapeAppNombre">QR Yape</p>
+                                        </div>
+                                    </div>
+                                    <div class="yape-datos">
+                                        <p class="yape-numero-label">Número registrado</p>
+                                        <p class="yape-numero">+51 969-518-850</p>
+                                        <p class="yape-paso"><span>1.</span> Abre tu app <strong id="yapeNombreApp">Yape</strong></p>
+                                        <p class="yape-paso"><span>2.</span> Escanea el QR o ingresa el número</p>
+                                        <p class="yape-paso"><span>3.</span> Ingresa el monto exacto: <strong id="yapeMonto">S/ 0.00</strong></p>
+                                        <p class="yape-paso"><span>4.</span> Envía el comprobante por WhatsApp</p>
+                                    </div>
+                                </div>
+                                <div class="pago-field-group" style="margin-top:16px;">
+                                    <label class="pago-label">Tu nombre para confirmar el pedido</label>
+                                    <input class="pago-input" id="yapeNombre" type="text" placeholder="Tu nombre completo">
+                                </div>
+                                <p id="yapeError" class="pago-error"></p>
+                                <button class="pago-btn-principal pago-btn-whatsapp" onclick="confirmarYape()">
+                                    <i class="fa-brands fa-whatsapp"></i> Enviar comprobante por WhatsApp
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- PANEL WHATSAPP -->
+                        <div class="metodo-panel metodo-panel-hidden" id="panelWhatsapp">
+                            <div class="whatsapp-panel">
+                                <div class="whatsapp-info">
+                                    <div class="whatsapp-icon-big">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <h3>Paga presencialmente o coordina tu entrega</h3>
+                                    <p>Al hacer clic se abrirá WhatsApp con el resumen de tu pedido. Nuestro equipo te confirmará disponibilidad, precio final y forma de entrega.</p>
+                                    <div class="whatsapp-horario">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>Atención: Lun – Sáb de 8:00 am a 7:00 pm</span>
+                                    </div>
+                                </div>
+                                <div class="pago-field-group">
+                                    <label class="pago-label">Tu nombre</label>
+                                    <input class="pago-input" id="wpNombre" type="text" placeholder="¿Cómo te llamamos?">
+                                </div>
+                                <p id="wpError" class="pago-error"></p>
+                                <button class="pago-btn-principal pago-btn-whatsapp" onclick="enviarWhatsApp()">
+                                    <i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: resumen -->
+                    <div class="pago-col-right">
+                        <div class="resumen-box">
+                            <h3 class="resumen-titulo">Resumen del pedido</h3>
+                            <div class="resumen-items" id="resumenItems"></div>
+                            <div class="resumen-linea">
+                                <span>Subtotal</span>
+                                <span id="resumenSubtotal">S/ 0.00</span>
+                            </div>
+                            <div class="resumen-linea">
+                                <span>Envío</span>
+                                <span class="resumen-envio-free" id="resumenEnvio">Gratis</span>
+                            </div>
+                            <div class="resumen-total">
+                                <span>Total</span>
+                                <span id="resumenTotal">S/ 0.00</span>
+                            </div>
+                            <p class="resumen-nota"><i class="fa-solid fa-shield-halved"></i> Compra 100% segura</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PASO 2: COMPRA EXITOSA ===== -->
+        <section class="pago-section pago-section-hidden" id="pasoExito">
+            <div class="container">
+                <div class="exito-box">
+                    <div class="exito-icono">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h2 class="exito-titulo">¡Compra exitosa!</h2>
+                    <p class="exito-sub">Gracias por tu pedido. En breve nos comunicaremos contigo para confirmar los detalles.</p>
+                    <div class="exito-detalle" id="exitoDetalle"></div>
+                    <div class="exito-pasos">
+                        <div class="exito-paso">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Recibirás confirmación por correo o WhatsApp</span>
+                        </div>
+                        <div class="exito-paso">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>Coordinaremos la entrega o recojo en tienda</span>
+                        </div>
+                        <div class="exito-paso">
+                            <i class="fa-solid fa-star"></i>
+                            <span>¡Gracias por confiar en Estructuras & Diseños Group!</span>
+                        </div>
+                    </div>
+                    <a href="../../index.html" class="exito-btn-volver">
+                        <i class="fa-solid fa-house"></i> Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-bottom" style="padding:20px 0;">
+                <div class="footer-logos">
+                    <img src="../img/LOGO 1.png" alt="Logo E&D" class="footer-logo-img">
+                    <img src="../img/LOGO 2.png" alt="Estructuras & Diseños" class="footer-logo-img">
+                </div>
+                <div class="footer-bottom-links">
+                    <span>&copy; 2026 Estructuras & Diseños Group - Todos los derechos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // ============================================================
+    //  PAGO.JS — Lógica de la página de pago
+    //  Con SQL: reemplaza registrarPedido() por fetch() a tu API
+    // ============================================================
+
+    const WS_NUMERO = "51969518850";
+
+    // ── CARGAR CARRITO ──────────────────────────────────────
+    function obtenerCarrito() {
+        return JSON.parse(localStorage.getItem("carrito_edg") || "[]");
+    }
+
+    function calcularTotal(carrito) {
+        return carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+    }
+
+    function renderResumen() {
+        const carrito   = obtenerCarrito();
+        const contenedor = document.getElementById("resumenItems");
+        const total     = calcularTotal(carrito);
+        const envioGratis = total >= 99;
+
+        contenedor.innerHTML = "";
+
+        if (carrito.length === 0) {
+            contenedor.innerHTML = '<p style="color:#aaa;font-size:0.85rem;text-align:center;padding:12px 0;">El carrito está vacío.<br><a href="productos.html" style="color:var(--color3);">Ver productos</a></p>';
+        } else {
+            carrito.forEach(p => {
+                const div = document.createElement("div");
+                div.className = "resumen-item";
+                div.innerHTML = `
+                    <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='../img/LOGO 1.png'">
+                    <div class="resumen-item-info">
+                        <p class="resumen-item-nombre">${p.nombre}</p>
+                        <p class="resumen-item-qty">Cantidad: ${p.cantidad}</p>
+                    </div>
+                    <span class="resumen-item-precio">S/ ${(p.precio * p.cantidad).toFixed(2)}</span>
+                `;
+                contenedor.appendChild(div);
+            });
+        }
+
+        document.getElementById("resumenSubtotal").textContent = `S/ ${total.toFixed(2)}`;
+        document.getElementById("resumenTotal").textContent    = `S/ ${total.toFixed(2)}`;
+        document.getElementById("resumenEnvio").textContent    = envioGratis ? "Gratis" : "S/ 10.00";
+        document.getElementById("yapeMonto").textContent       = `S/ ${total.toFixed(2)}`;
+
+        if (!envioGratis) {
+            const t = total + 10;
+            document.getElementById("resumenTotal").textContent = `S/ ${t.toFixed(2)}`;
+        }
+    }
+
+
+    // ── CAMBIAR MÉTODO ──────────────────────────────────────
+    function cambiarMetodo(metodo) {
+        ["tarjeta","yape","whatsapp"].forEach(m => {
+            document.getElementById("panel" + capitalizar(m)).classList.add("metodo-panel-hidden");
+            document.getElementById("tab"   + capitalizar(m)).classList.remove("metodo-tab-active");
+        });
+        document.getElementById("panel" + capitalizar(metodo)).classList.remove("metodo-panel-hidden");
+        document.getElementById("tab"   + capitalizar(metodo)).classList.add("metodo-tab-active");
+    }
+
+    function capitalizar(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+    function cambiarYape(app) {
+        document.getElementById("yapeNombreApp").textContent = app === "yape" ? "Yape" : "Plin";
+        document.getElementById("yapeAppNombre").textContent = "QR " + (app === "yape" ? "Yape" : "Plin");
+        document.getElementById("yapeMonto").textContent = document.getElementById("resumenTotal").textContent;
+        ["btnYape","btnPlin"].forEach(id => document.getElementById(id).classList.remove("yape-tab-active"));
+        document.getElementById(app === "yape" ? "btnYape" : "btnPlin").classList.add("yape-tab-active");
+    }
+
+
+    // ── CONSTRUIR MENSAJE WHATSAPP ──────────────────────────
+    function construirMensajeWS(nombre) {
+        const carrito = obtenerCarrito();
+        const total   = calcularTotal(carrito);
+        let msg = `Hola Estructuras & Diseños Group 👋\n\n`;
+        msg    += `*Pedido de: ${nombre}*\n`;
+        msg    += `━━━━━━━━━━━━━━━━━━\n`;
+        carrito.forEach(p => {
+            msg += `▸ ${p.nombre}\n  Cantidad: ${p.cantidad} × S/ ${p.precio.toFixed(2)} = S/ ${(p.precio * p.cantidad).toFixed(2)}\n`;
+        });
+        msg += `━━━━━━━━━━━━━━━━━━\n`;
+        msg += `*Total: S/ ${total.toFixed(2)}*\n\n`;
+        msg += `Quisiera coordinar el pago y la entrega 🙏`;
+        return encodeURIComponent(msg);
+    }
+
+
+    // ── PROCESAR TARJETA ────────────────────────────────────
+    function procesarTarjeta() {
+        const errorEl = document.getElementById("tarjetaError");
+        errorEl.textContent = "";
+
+        const nombre  = document.getElementById("cardNombre").value.trim();
+        const numero  = document.getElementById("cardNumero").value.replace(/\s/g,"");
+        const venc    = document.getElementById("cardVenc").value.trim();
+        const cvv     = document.getElementById("cardCvv").value.trim();
+        const email   = document.getElementById("cardEmail").value.trim();
+
+        if (!nombre || !numero || !venc || !cvv || !email) {
+            errorEl.textContent = "Por favor completa todos los campos."; return;
+        }
+        if (numero.length < 16 || isNaN(numero)) {
+            errorEl.textContent = "Número de tarjeta inválido."; return;
+        }
+        if (!/^\d{2}\/\d{2}$/.test(venc)) {
+            errorEl.textContent = "Formato de vencimiento: MM/AA"; return;
+        }
+        if (cvv.length < 3) {
+            errorEl.textContent = "CVV inválido."; return;
+        }
+        if (!email.includes("@")) {
+            errorEl.textContent = "Email inválido."; return;
+        }
+
+        const carrito = obtenerCarrito();
+        if (carrito.length === 0) { errorEl.textContent = "Tu carrito está vacío."; return; }
+        registrarPedido({ tipo:"tarjeta", nombre, email, carrito })
+            .then(codigo => mostrarExito(nombre, "tarjeta", codigo));
+    }
+
+
+    // ── CONFIRMAR YAPE ──────────────────────────────────────
+    function confirmarYape() {
+        const errorEl = document.getElementById("yapeError");
+        errorEl.textContent = "";
+        const nombre = document.getElementById("yapeNombre").value.trim();
+        if (!nombre) { errorEl.textContent = "Ingresa tu nombre para continuar."; return; }
+
+        const msg = construirMensajeWS(nombre + " (Yape/Plin)");
+        window.open(`https://wa.me/${WS_NUMERO}?text=${msg}`, "_blank");
+
+        const carrito = obtenerCarrito();
+        if (carrito.length === 0) { errorEl.textContent = "Tu carrito está vacío."; return; }
+        registrarPedido({ tipo:"yape", nombre, carrito })
+            .then(codigo => mostrarExito(nombre, "yape", codigo));
+    }
+
+
+    // ── ENVIAR WHATSAPP ─────────────────────────────────────
+    function enviarWhatsApp() {
+        const errorEl = document.getElementById("wpError");
+        errorEl.textContent = "";
+        const nombre = document.getElementById("wpNombre").value.trim();
+        if (!nombre) { errorEl.textContent = "Ingresa tu nombre para continuar."; return; }
+
+        const msg = construirMensajeWS(nombre);
+        window.open(`https://wa.me/${WS_NUMERO}?text=${msg}`, "_blank");
+
+        const carrito = obtenerCarrito();
+        if (carrito.length === 0) { errorEl.textContent = "Tu carrito está vacío."; return; }
+        registrarPedido({ tipo:"whatsapp", nombre, carrito })
+            .then(codigo => mostrarExito(nombre, "whatsapp", codigo));
+    }
+
+
+    // ── REGISTRAR PEDIDO (POST /api/pedidos → tabla Pedidos) ──
+    // Devuelve el código de pedido real generado por la BD
+    // (EDG-YYYYMMDD-00001). Si el backend no responde, guarda
+    // el pedido en localStorage como respaldo y devuelve null.
+    async function registrarPedido(datos) {
+        datos.fecha = new Date().toISOString();
+        datos.total = calcularTotal(datos.carrito);
+
+        let sesion = null;
+        try { sesion = JSON.parse(localStorage.getItem("sesion_edg") || "null"); } catch {}
+
+        try {
+            const resp = await fetch("/api/pedidos", {
+                method:  "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    sessionId: localStorage.getItem("session_edg") || null,
+                    usuarioId: sesion?.id_usuario || null,
+                    tipo:      datos.tipo,
+                    nombre:    datos.nombre,
+                    email:     datos.email || sesion?.email || null,
+                    carrito:   datos.carrito.map(p => ({
+                        id:       p.id,
+                        sku:      p.sku || null,
+                        nombre:   p.nombre,
+                        precio:   p.precio,
+                        cantidad: p.cantidad
+                    }))
+                })
+            });
+            const data = await resp.json();
+            if (!resp.ok) throw new Error(data.error || "HTTP " + resp.status);
+
+            localStorage.removeItem("carrito_edg"); // limpiar carrito local
+            console.log("✅ Pedido registrado en la BD:", data.codigo_pedido);
+            return data.codigo_pedido || null;
+
+        } catch (err) {
+            console.warn("⚠️ No se pudo registrar el pedido en la BD, guardando respaldo local:", err.message);
+            const pedidos = JSON.parse(localStorage.getItem("pedidos_edg") || "[]");
+            pedidos.push(datos);
+            localStorage.setItem("pedidos_edg", JSON.stringify(pedidos));
+            localStorage.removeItem("carrito_edg"); // limpiar carrito
+            return null;
+        }
+    }
+
+
+    // ── PANTALLA DE ÉXITO ───────────────────────────────────
+    function mostrarExito(nombre, tipo, codigo) {
+        document.getElementById("pasoMetodo").classList.add("pago-section-hidden");
+        const exito = document.getElementById("pasoExito");
+        exito.classList.remove("pago-section-hidden");
+
+        const metodos = { tarjeta:"pago con tarjeta", yape:"pago por Yape/Plin", whatsapp:"pedido por WhatsApp" };
+        const lineaCodigo = codigo
+            ? `<p><i class="fa-solid fa-hashtag"></i> Código de pedido: <strong>${codigo}</strong></p>`
+            : "";
+        document.getElementById("exitoDetalle").innerHTML = `
+            <p><i class="fa-solid fa-user"></i> <strong>${nombre}</strong></p>
+            ${lineaCodigo}
+            <p><i class="fa-solid fa-receipt"></i> Método: ${metodos[tipo] || tipo}</p>
+            <p><i class="fa-solid fa-calendar-check"></i> ${new Date().toLocaleDateString("es-PE",{day:"2-digit",month:"long",year:"numeric"})}</p>
+        `;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+
+    // ── FORMATO NÚMERO TARJETA ──────────────────────────────
+    document.addEventListener("DOMContentLoaded", function() {
+        renderResumen();
+
+        const cardInput = document.getElementById("cardNumero");
+        if (cardInput) {
+            cardInput.addEventListener("input", function() {
+                let val = this.value.replace(/\D/g,"").substring(0,16);
+                this.value = val.replace(/(.{4})/g,"$1 ").trim();
+            });
+        }
+        const vencInput = document.getElementById("cardVenc");
+        if (vencInput) {
+            vencInput.addEventListener("input", function() {
+                let val = this.value.replace(/\D/g,"");
+                if (val.length >= 2) val = val.substring(0,2) + "/" + val.substring(2,4);
+                this.value = val;
+            });
+        }
+    });
+    </script>
+
+    <script src="../js/ui-enhancements.js"></script>
+    <script src="../js/store-data.js"></script>
+    <script src="../js/virtual-assistant.js"></script>
+</body>
+</html>
+

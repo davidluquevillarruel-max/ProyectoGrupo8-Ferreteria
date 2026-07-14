@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizar venta - Panel de gestión</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="admin-body">
+    <aside class="admin-sidebar">
+        <a class="admin-brand" href="../../index.html"><img src="../img/LOGO 1.png" alt="E&D"><span>Panel de gestión</span></a>
+        <nav class="admin-nav">
+            <a class="admin-nav-link" href="admin-inventario.html"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a>
+            <a class="admin-nav-link admin-active" href="admin-ventas.html"><i class="fa-solid fa-chart-line"></i> Analizar venta</a>
+            <a class="admin-nav-link" href="admin-usuarios.html"><i class="fa-solid fa-users-gear"></i> Control de usuarios</a>
+            <a class="admin-nav-link" href="admin-productos.html"><i class="fa-solid fa-plus"></i> Agregar o quitar productos</a>
+        </nav>
+        <a class="admin-back" href="../../index.html"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-top">
+            <div>
+                <span class="section-kicker">Administración</span>
+                <h1>Analizar venta</h1>
+                <p>Indicadores para revisar ingresos, pedidos y productos con mayor movimiento.</p>
+            </div>
+            <button class="admin-primary-btn" type="button"><i class="fa-solid fa-calendar-days"></i> Este mes</button>
+        </header>
+
+        <section class="admin-stat-grid">
+            <article class="admin-stat-card"><span>Ventas</span><strong data-stat="sales">S/ 0.00</strong><small>Se actualiza con pedidos</small></article>
+            <article class="admin-stat-card"><span>Pedidos</span><strong data-stat="orders">0</strong><small>Pedidos registrados</small></article>
+            <article class="admin-stat-card"><span>Ticket promedio</span><strong data-stat="avg-ticket">S/ 0.00</strong><small>Compra combinada</small></article>
+            <article class="admin-stat-card"><span>Conversión</span><strong data-stat="conversion">0%</strong><small>Carrito a pedido</small></article>
+        </section>
+
+        <section class="admin-grid-two">
+            <article class="admin-panel">
+                <div class="admin-panel-head"><h2>Ventas por categoría</h2></div>
+                <div class="sales-bars">
+                    <div><span>Herramientas eléctricas</span><strong>S/ 2,390</strong><i style="width:82%"></i></div>
+                    <div><span>Herramientas inalámbricas</span><strong>S/ 1,740</strong><i style="width:60%"></i></div>
+                    <div><span>Herramientas manuales</span><strong>S/ 690</strong><i style="width:28%"></i></div>
+                </div>
+            </article>
+            <article class="admin-panel">
+                <div class="admin-panel-head"><h2>Productos destacados</h2></div>
+                <ol class="admin-ranking">
+                    <li><img class="admin-ranking-img" src="../img herramientas/Rectangle 28 (1).png" alt="Taladro Percutor"><span>Taladro Percutor 850W</span><strong>9 ventas</strong></li>
+                    <li><img class="admin-ranking-img" src="../img herramientas/Rectangle 19 (1).png" alt="Llave de Impacto"><span>Llave de Impacto 1500NM</span><strong>6 ventas</strong></li>
+                    <li><img class="admin-ranking-img" src="../img herramientas/Rectangle 36.png" alt="Careta Automática"><span>Careta Automática para Soldar</span><strong>5 ventas</strong></li>
+                    <li><img class="admin-ranking-img" src="../img herramientas/Rectangle 17.png" alt="Broca Metal"><span>Broca Metal 4MM Truper</span><strong>4 ventas</strong></li>
+                </ol>
+            </article>
+        </section>
+    </main>
+    <script src="../js/ui-enhancements.js"></script>
+    <script src="../js/store-data.js"></script>
+    <script src="../js/virtual-assistant.js"></script>
+</body>
+</html>

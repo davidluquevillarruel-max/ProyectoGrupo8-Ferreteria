@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras & Diseños Group</title>
+    <link rel="stylesheet" href="assets/CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- ===== OVERLAY (cierra el sidebar al hacer clic fuera) ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ===== SIDEBAR ZONA CLIENTE ===== -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <div class="sidebar-user">
+                <div class="sidebar-avatar" id="sidebarAvatar" style="cursor:pointer;" title="Iniciar sesión / Registrarse">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <p class="sidebar-title" id="sidebarUserName">Zona cliente</p>
+                    <p class="sidebar-subtitle" id="sidebarUserSub">Compra rápida y segura</p>
+                </div>
+            </div>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar menú">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar productos...">
+        </div>
+
+        <div class="sidebar-section-label">ACCESO RÁPIDO</div>
+        <div class="sidebar-menu">
+            <a href="#" class="sidebar-menu-item" id="btnOfertasDia">
+                <div class="sidebar-menu-icon"><i class="fa-solid fa-tag"></i></div>
+                <div>
+                    <p class="sidebar-menu-title">Ofertas del día</p>
+                    <p class="sidebar-menu-sub">Promociones y descuentos especiales</p>
+                </div>
+            </a>
+            <a href="assets/pages/pago.html" class="sidebar-menu-item" id="btnMisPedidos">
+                <div class="sidebar-menu-icon"><i class="fa-solid fa-box"></i></div>
+                <div>
+                    <p class="sidebar-menu-title">Mis pedidos</p>
+                    <p class="sidebar-menu-sub">Consulta tus compras y seguimiento</p>
+                </div>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <div class="sidebar-menu-icon"><i class="fa-solid fa-heart"></i></div>
+                <div>
+                    <p class="sidebar-menu-title">Favoritos</p>
+                    <p class="sidebar-menu-sub">Guarda tus productos preferidos</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="sidebar-section-label">CATEGORÍAS</div>
+        <div class="sidebar-categories">
+            <a href="assets/pages/productos.html?cat=manuales" class="sidebar-cat" data-cat="manuales">Herramientas manuales</a>
+            <a href="assets/pages/productos.html?cat=electricas" class="sidebar-cat" data-cat="electricas">Herramientas eléctricas</a>
+            <a href="assets/pages/productos.html?cat=inalambricas" class="sidebar-cat" data-cat="inalambricas">Herramientas inalámbricas</a>
+            <a href="assets/pages/productos.html" class="sidebar-cat" data-cat="todas">Ver todo</a>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="#" class="sidebar-cart-btn" id="btnIrCarritoSidebar">
+                <i class="fa-solid fa-cart-shopping"></i> Ir al carrito
+            </a>
+        </div>
+
+        <!-- ── DIVISOR ENTRE PANELES ── -->
+        <div class="sidebar-divider sidebar-admin-zone" style="display:none;"></div>
+
+        <!-- ══════════════════════════════════════════════════════════════
+             ZONA ADMIN — Oculta por defecto. auth.js la muestra
+             SOLO si el usuario logueado tiene rol="admin".
+             Los clientes nunca ven este bloque.
+             ══════════════════════════════════════════════════════════════ -->
+        <div class="sidebar-admin-zone" data-admin-zone style="display:none;">
+
+            <!-- ── PANEL ADMIN ── -->
+            <div class="sidebar-header sidebar-header-admin">
+                <div class="sidebar-user">
+                    <div class="sidebar-avatar sidebar-avatar-admin">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div>
+                        <p class="sidebar-title">Panel de gestión</p>
+                        <p class="sidebar-subtitle">Ferretería · admin</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar productos...">
+            </div>
+
+            <div class="sidebar-section-label">ADMINISTRACIÓN</div>
+            <div class="sidebar-menu">
+                <a href="assets/pages/admin-inventario.html" class="sidebar-menu-item">
+                    <div class="sidebar-menu-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <div>
+                        <p class="sidebar-menu-title">Inventario</p>
+                        <p class="sidebar-menu-sub">Control de stock y productos</p>
+                    </div>
+                </a>
+                <a href="assets/pages/admin-ventas.html" class="sidebar-menu-item">
+                    <div class="sidebar-menu-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <p class="sidebar-menu-title">Analizar venta</p>
+                        <p class="sidebar-menu-sub">Ventas e inventario</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-footer sidebar-footer-admin">
+                <a href="assets/pages/admin-usuarios.html" class="sidebar-admin-btn">
+                    <i class="fa-solid fa-users-gear"></i> Control de Usuarios
+                </a>
+                <a href="assets/pages/admin-productos.html" class="sidebar-admin-btn sidebar-admin-btn-alt">
+                    <i class="fa-solid fa-plus"></i> Agregar o quitar productos
+                </a>
+            </div>
+
+        </div><!-- /.sidebar-admin-zone -->
+
+    </aside>
+
+    <!-- ===== TOP BAR ===== -->
+    <section class="top-bar">
+        <div class="container">
+            <div class="top-bar-main">
+                <div class="top-bar-contact">
+                    <a href="tel:+51952361384">
+                        <i class="fa-solid fa-phone-flip"></i> 952-361-384
+                    </a>
+                    <a href="">
+                        <i class="fa-solid fa-location-dot"></i> Cesar Vallejo 20 - Chorrillos
+                    </a>
+                </div>
+                <div class="top-bar-social">
+                    <span>Síguenos:</span>
+                    <a target="_blank" href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/dcbarron.arch/"><i class="fa-brands fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header padding-sm">
+        <div class="container">
+            <div class="nav-bar">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img class="img-fluid logo-header" src="assets/img/LOGO 1.png" alt="Estructuras & Diseños Group">
+                    </a>
+                    <a href="index.html">
+                        <img class="img-fluid logo-header" src="assets/img/LOGO 2.png" alt="Estructuras & Diseños Group">
+                    </a>
+                </div>
+                <div class="header-actions">
+                    <!-- Botones cuando NO hay sesión iniciada -->
+                    <a class="service-button btn-iniciar-sesion" href="#" id="btnIniciarSesion">Iniciar sesión</a>
+                    <a class="service-button btn-registrarse" href="#" id="btnAbrirAuth">Registrarse</a>
+
+                    <!-- Botones cuando SÍ hay sesión iniciada (ocultos por defecto) -->
+                    <span class="user-greeting" id="userGreeting" style="display:none;">
+                        <i class="fa-solid fa-user-check"></i> <span id="userGreetingName">Usuario</span>
+                    </span>
+                    <a class="service-button btn-cerrar-sesion" href="#" id="btnCerrarSesion" style="display:none;">
+                        <i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión
+                    </a>
+
+                    <a class="cart-button" href="#">
+                        <span class="cart-badge">0</span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== NAV BAR (franja naranja) ===== -->
+    <nav class="nav-bar-main">
+        <div class="container">
+            <div class="nav-bar-inner">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="nav-menu" id="mainMenu">
+                    <a class="nav-menu-link nav-link-active" href="index.html">Inicio</a>
+                    <a class="nav-menu-link" href="assets/pages/nosotros.html">Sobre Nosotros</a>
+                    <a class="nav-menu-link" href="assets/pages/productos.html">Productos</a>
+                    <a class="nav-menu-link" href="assets/pages/contacto.html">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="assets/video/f_b_ba_ba_e_c_d_mp_ (online-video-cutter.com).mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <p class="hero-brand">Estructuras & Diseños Group</p>
+                <h1 class="hero-title">"TODO LO QUE NECESITAS<br>PARA CONSTRUIR TUS<br>SUEÑOS"</h1>
+                <div class="hero-buttons">
+                    <a class="hero-btn hero-btn-primary" href="assets/pages/productos.html">Explorar catálogo</a>
+                    <a class="hero-btn hero-btn-outline" href="assets/pages/nosotros.html">Conoce la empresa</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICE CARDS (2 columnas) ===== -->
+        <section class="service padding-xl">
+            <div class="container cards-container">
+                <div class="row">
+                    <div class="col col-50 padding-sm">
+                        <div class="service-card">
+                            <div class="service-text">
+                                <h3>Nuevos Productos</h3>
+                                <p>Herramientas innovadoras para proyectos modernos</p>
+                                <a class="service-button" href="assets/pages/productos.html">Compra ahora</a>
+                            </div>
+                            <img class="img-fluid" src="assets/img/1.png" alt="Nuevos productos">
+                        </div>
+                    </div>
+                    <div class="col col-50 padding-sm">
+                        <div class="service-card">
+                            <div class="service-text">
+                                <h3>Contamos con un amplio Catálogo de Productos</h3>
+                                <p>Haz click para explorar nuestro catálogo completo</p>
+                                <a class="service-button" href="assets/pages/productos.html">Compra ahora</a>
+                            </div>
+                            <img class="img-fluid" src="assets/img/2.png" alt="Catálogo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BENEFICIOS (3 columnas) ===== -->
+        <section class="benefits padding-xl">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="benefit-text">
+                            <h3>Asesoramiento técnico</h3>
+                            <p>Te ayudamos a seleccionar las mejores herramientas para tus proyectos</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <div class="benefit-text">
+                            <h3>Envío gratis</h3>
+                            <p>Por órdenes mayores a S/ 99</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="benefit-text">
+                            <h3>Pago seguro</h3>
+                            <p>Pago seguro al 100%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCIA DE COMPRA INTELIGENTE ===== -->
+        <section class="smart-shop padding-xl" aria-labelledby="smartShopTitle">
+            <div class="container smart-shop-shell">
+                <div class="smart-shop-copy">
+                    <span class="smart-shop-eyebrow"><i class="fa-solid fa-sparkles"></i> Compra asistida con IA</span>
+                    <h2 id="smartShopTitle">Encuentra la herramienta correcta sin perder tiempo</h2>
+                    <p>EDG IA entiende lo que necesitas, revisa el catálogo de la tienda y te ayuda a comparar alternativas, precios y formas de compra.</p>
+                    <div class="smart-shop-actions">
+                        <button type="button" class="smart-shop-primary" onclick="window.EDGAssistant?.open('Quiero encontrar una herramienta')">
+                            <i class="fa-solid fa-cloud"></i> Abrir EDG IA
+                        </button>
+                        <a class="smart-shop-secondary" href="assets/pages/productos.html">Ver todos los productos <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="smart-shop-grid">
+                    <article class="smart-shop-card">
+                        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <div><h3>Búsqueda inteligente</h3><p>Consulta por nombre, uso, material o presupuesto.</p></div>
+                    </article>
+                    <article class="smart-shop-card">
+                        <span><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                        <div><h3>Recomendaciones útiles</h3><p>Recibe opciones según el trabajo que vas a realizar.</p></div>
+                    </article>
+                    <article class="smart-shop-card">
+                        <span><i class="fa-solid fa-cart-shopping"></i></span>
+                        <div><h3>Compra guiada</h3><p>Revisa carrito, pagos, envíos y atención desde el chat.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRODUCTOS DESTACADOS ===== -->
+        <section class="productos-destacados padding-xl" id="productosDestacados">
+            <div class="container">
+                <div class="section-header">
+                    <a class="service-button btn-tendencia" href="assets/pages/productos.html">Tendencia de productos</a>
+                    <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
+                </div>
+                <!-- Las tarjetas se generan dinámicamente desde productos-destacados.js -->
+                <div class="products-grid" id="productsGrid"></div>
+            </div>
+        </section>
+
+        <!-- ===== MARCAS ===== -->
+        <section class="marcas padding-xl">
+            <div class="container">
+                <h2 class="marcas-title">TRABAJAMOS CON GRANDES MARCAS</h2>
+                <div class="marcas-grid">
+                    <div class="marca-item">
+                        <img src="assets/sgv/bosch-logo-simple.svg" alt="Bosch" class="marca-svg">
+                    </div>
+                    <div class="marca-item">
+                        <img src="assets/sgv/philips.svg" alt="Philips" class="marca-svg">
+                    </div>
+                    <div class="marca-item">
+                        <span class="marca-nombre marca-stanley">STANLEY<br><small>BUILT FOR LIFE</small></span>
+                    </div>
+                    <div class="marca-item">
+                        <img src="assets/sgv/cat-1.svg" alt="CAT" class="marca-svg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Compañía</h4>
+                    <ul class="footer-list">
+                        <li><a href="assets/pages/nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="#">Iniciar sesión</a></li>
+                        <li><a href="mailto:estructurasydiseniosgroup@ferreteria.com">estructurasydiseniosgroup@ferreteria.com</a></li>
+                        <li><a href="tel:+51969518850">969518850</a></li>
+                        <li><span>Av. César Vallejo 20, Chorrillos</span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Cuenta</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Crear cuenta</a></li>
+                        <li><a href="#">Acceso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Apoyo</h4>
+                    <ul class="footer-list">
+                        <li><a href="assets/pages/contacto.html">Contacto</a></li>
+                        <li><a href="assets/pages/productos.html">Solicitar productos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-desc">
+                    <p>Estructuras & Diseños Group es una ferretería con años de experiencia brindándote los mejores productos de las mejores marcas.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logos">
+                    <img src="assets/img/LOGO 1.png" alt="Logo E&D" class="footer-logo-img">
+                    <img src="assets/img/LOGO 2.png" alt="Estructuras & Diseños" class="footer-logo-img">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Términos y condiciones</a>
+                    <span>&copy; 2026 Estructuras & Diseños Group - Todos los derechos reservados</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a class="scroll-up" href="#">
+        <i class="fa-solid fa-angle-up"></i>
+    </a>
+
+
+    <!-- ===== PANEL CARRITO ===== -->
+    <div class="carrito-overlay" id="carritoOverlay"></div>
+    <aside class="carrito-panel" id="carritoPanel">
+        <div class="carrito-header">
+            <h3 class="carrito-title"><i class="fa-solid fa-cart-shopping"></i> Tu carrito</h3>
+            <button class="carrito-close" id="carritoClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="carrito-lista" id="carritoLista"></div>
+        <div class="carrito-footer">
+            <div class="carrito-subtotal">
+                <span>Subtotal</span>
+                <span id="carritoSubtotal">S/ 0.00</span>
+            </div>
+            <div class="carrito-total">
+                <span>Total</span>
+                <span id="carritoTotal">S/ 0.00</span>
+            </div>
+            <a href="assets/pages/pago.html" class="carrito-btn-pagar">Ir a pagar</a>
+        </div>
+    </aside>
+
+        <!-- ===== MODAL AUTH (Registro / Login / Cuenta creada) ===== -->
+    <div class="auth-overlay" id="authOverlay"></div>
+
+    <div class="auth-modal" id="authModal">
+
+        <!-- PANEL: INICIAR SESIÓN -->
+        <div class="auth-panel" id="panelLogin">
+            <div class="auth-modal-logo">
+                <img src="assets/img/LOGO 1.png" alt="E&D Group">
+            </div>
+            <h2 class="auth-modal-title">¡Bienvenido!</h2>
+            <p class="auth-modal-sub">¿No tienes una cuenta? <a href="#" class="auth-link" id="goToRegister">Regístrate</a></p>
+            <div class="auth-field">
+                <label class="auth-label">Email</label>
+                <input type="email" id="loginEmail" class="auth-input" placeholder="james.correa@gmail.com">
+            </div>
+            <div class="auth-field">
+                <label class="auth-label">Password</label>
+                <input type="password" id="loginPassword" class="auth-input" placeholder="••••••••••••••••">
+            </div>
+            <button class="auth-btn-primary" id="btnLogin">Iniciar Sesión</button>
+            <p id="loginError" class="auth-error"></p>
+            <a href="#" class="auth-forgot">¿Olvidaste tu contraseña?</a>
+            <div class="auth-divider"><span>O Inicia Sesión con</span></div>
+            <div class="auth-social">
+                <button class="auth-social-btn" id="btnLoginGoogle">
+                    <img src="assets/img/Google.png" alt="Google"> Google
+                </button>
+                <button class="auth-social-btn auth-social-fb" id="btnLoginFacebook">
+                    <img src="assets/img/Facebook.png" alt="Facebook"> Facebook
+                </button>
+            </div>
+        </div>
+
+        <!-- PANEL: REGISTRO -->
+        <div class="auth-panel auth-panel-hidden" id="panelRegister">
+            <button class="auth-close" id="authClose"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="auth-modal-title">¡Regístrate!</h2>
+            <p class="auth-modal-sub">¿Ya tienes una cuenta? <a href="#" class="auth-link" id="goToLogin">Inicia sesión</a></p>
+            <div class="auth-field">
+                <label class="auth-label">Nombres</label>
+                <input type="text" id="regNombre" class="auth-input" placeholder="James">
+            </div>
+            <div class="auth-field">
+                <label class="auth-label">Apellidos</label>
+                <input type="text" id="regApellido" class="auth-input" placeholder="Correa">
+            </div>
+            <div class="auth-field">
+                <label class="auth-label">DNI</label>
+                <input type="text" id="regDni" class="auth-input" placeholder="12345678" maxlength="8" inputmode="numeric">
+            </div>
+            <div class="auth-field">
+                <label class="auth-label">Email</label>
+                <input type="email" id="regEmail" class="auth-input" placeholder="james.correa@gmail.com">
+            </div>
+            <div class="auth-field">
+                <label class="auth-label">Password</label>
+                <input type="password" id="regPassword" class="auth-input" placeholder="••••••••••••••••">
+            </div>
+            <div class="auth-field">
+                <label class="auth-label">Confirmar password</label>
+                <input type="password" id="regPasswordConfirm" class="auth-input" placeholder="••••••••••••••••">
+            </div>
+            <button class="auth-btn-primary" id="btnRegister">Crear cuenta</button>
+            <p id="registerError" class="auth-error"></p>
+            <p class="auth-modal-sub" style="margin-top:12px;">Continúa con Google o Facebook</p>
+            <div class="auth-social">
+                <button class="auth-social-btn" id="btnRegGoogle">
+                    <img src="assets/img/Google.png" alt="Google"> Google
+                </button>
+                <button class="auth-social-btn auth-social-fb" id="btnRegFacebook">
+                    <img src="assets/img/Facebook.png" alt="Facebook"> Facebook
+                </button>
+            </div>
+        </div>
+
+        <!-- PANEL: CUENTA CREADA -->
+        <div class="auth-panel auth-panel-hidden" id="panelSuccess">
+            <div class="auth-success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 class="auth-modal-title">¡Cuenta creada!</h2>
+            <p class="auth-modal-sub">Tu registro se completó correctamente.<br>Ya puedes iniciar sesión con tu cuenta.</p>
+            <div class="auth-email-box">
+                <span class="auth-email-label">Correo registrado</span>
+                <span id="successEmail" class="auth-email-value"></span>
+            </div>
+            <button class="auth-btn-primary" id="btnGoLogin">Ir a iniciar sesión</button>
+            <p class="auth-modal-sub" style="margin-top:10px;">Tu cuenta ya está lista para comprar</p>
+        </div>
+
+    </div>
+
+    <!-- Carrito de compras -->
+    <script src="assets/js/carrito.js"></script>
+
+    <!-- Productos destacados — renderizado dinámico desde JS (preparado para SQL) -->
+    <script src="assets/js/productos-destacados.js"></script>
+    <!-- Auth modal (registro / login / cuenta creada) -->
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/ui-enhancements.js"></script>
+    <script src="assets/js/store-data.js"></script>
+    <script src="assets/js/virtual-assistant.js"></script>
+
+    <script>
+        // Sidebar
+        const menuToggle   = document.getElementById('menuToggle');
+        const sidebar      = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebarClose');
+        const overlay      = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('sidebar-open');
+            overlay.classList.add('overlay-visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('sidebar-open');
+            overlay.classList.remove('overlay-visible');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
+    </script>
+
+
+    <script>
+        // ── SIDEBAR: OFERTAS DEL DÍA → scroll a productos destacados ──
+        document.getElementById("btnOfertasDia")?.addEventListener("click", function(e) {
+            e.preventDefault();
+            // Cerrar sidebar
+            document.getElementById("sidebar")?.classList.remove("sidebar-open");
+            document.getElementById("sidebarOverlay")?.classList.remove("overlay-visible");
+            document.body.style.overflow = "";
+            // Scroll suave a la sección de productos destacados
+            setTimeout(function() {
+                const seccion = document.getElementById("productosDestacados");
+                if (seccion) seccion.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 300);
+        });
+
+        // ── SIDEBAR: IR AL CARRITO → abrir panel carrito ──
+        document.getElementById("btnIrCarritoSidebar")?.addEventListener("click", function(e) {
+            e.preventDefault();
+            // Cerrar sidebar primero
+            document.getElementById("sidebar")?.classList.remove("sidebar-open");
+            document.getElementById("sidebarOverlay")?.classList.remove("overlay-visible");
+            document.body.style.overflow = "";
+            // Abrir carrito con pequeño delay para que cierre antes
+            setTimeout(function() {
+                if (typeof abrirCarrito === "function") abrirCarrito();
+            }, 300);
+        });
+    </script>
+</body>
+</html>
+
